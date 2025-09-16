@@ -5,6 +5,7 @@ import Home from './pages/home'
 import App from './App'
 import Categories from './pages/categories'
 import MenuPage from './pages/menu'
+import OrderPage from './pages/order'
 
 export const router = createBrowserRouter([
   {
@@ -16,6 +17,7 @@ export const router = createBrowserRouter([
       { path: 'contact', element: <Contact /> },
       { path: 'categories', element: <Categories /> }, // Add categories route
       { path: 'menu', element: <MenuPage /> },
+      { path: 'order', element: <OrderPage /> },
     ]
   }
 ])

@@ -1,4 +1,5 @@
-import { ReactNode } from 'react';
+import { LucideIcon } from "lucide-react";
+import { ReactNode } from "react";
 
 export interface CartItem {
   id: string;
@@ -10,7 +11,7 @@ export interface CartItem {
 
 export interface CartContextType {
   cartItems: CartItem[];
-  addToCart: (item: Omit<CartItem, 'quantity'>) => void;
+  addToCart: (item: Omit<CartItem, "quantity">) => void;
   removeFromCart: (id: string) => void;
   updateQuantity: (id: string, quantity: number) => void;
   clearCart: () => void;
@@ -24,7 +25,6 @@ export interface CartProviderProps {
   children: ReactNode;
 }
 
-
 export interface Cookie {
   id: string;
   name: string;
@@ -37,8 +37,8 @@ export interface Cookie {
   isBestseller?: boolean;
 }
 
-export type SortOption = 'popularity' | 'price-low' | 'price-high' | 'newest';
-export type ViewMode = 'grid' | 'list';
+export type SortOption = "popularity" | "price-low" | "price-high" | "newest";
+export type ViewMode = "grid" | "list";
 
 export interface Category {
   id: number;
@@ -51,4 +51,42 @@ export interface Category {
   dateAdded: string;
   badge?: string;
   badgeColor?: string;
+}
+
+export interface Feature {
+  id: string;
+  icon: LucideIcon;
+  title: string;
+  description: string;
+  iconColor?: string;
+  bgColor?: string;
+}
+
+export interface WhyOrderFromUsProps {
+  className?: string;
+  features?: Feature[];
+}
+
+export interface FeatureCardProps {
+  feature: Feature;
+  index: number;
+  variants?: any; // For framer-motion
+  initial?: string;
+  whileInView?: string;
+  viewport?: any;
+}
+
+
+export interface FAQItem {
+  id: string;
+  question: string;
+  answer: string;
+}
+
+export interface FAQSectionProps {
+  className?: string;
+  title?: string;
+  description?: string;
+  faqs?: FAQItem[];
+  contactLink?: string;
 }
