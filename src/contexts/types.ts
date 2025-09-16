@@ -36,3 +36,19 @@ export interface Cookie {
   websiteUrl: string;
   isBestseller?: boolean;
 }
+
+export type SortOption = 'popularity' | 'price-low' | 'price-high' | 'newest';
+export type ViewMode = 'grid' | 'list';
+
+export interface Category {
+  id: number;
+  name: string;
+  description: string;
+  image: string;
+  varieties: number;
+  popularity: number;
+  price: number;
+  dateAdded: string;
+  badge?: string;
+  badgeColor?: string;
+}

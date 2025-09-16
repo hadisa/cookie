@@ -22,7 +22,7 @@ const SpecialOffers = () => {
                                 <p className="text-primary-600 mb-4">Get 20% off when you purchase any 3 dozen cookies from our specialty collection.</p>
                                 <a href="#" className="text-secondary hover:text-primary-800 font-medium flex items-center">
                                     Shop Now
-                                    <ArrowRight className="ml-2 h-4 w-4" />
+                                    <ArrowRight className="ml-2 mt-1 h-4 w-4" />
                                 </a>
                             </div>
                         </div>
@@ -40,7 +40,7 @@ const SpecialOffers = () => {
                                 <p className="text-primary-600 mb-4">Join our subscription service and get 15% off plus free shipping on every order.</p>
                                 <a href="#" className="text-secondary hover:text-primary-800 font-medium flex items-center">
                                     Learn More
-                                    <ArrowRight className="ml-2 h-4 w-4" />
+                                    <ArrowRight className="ml-2 mt-1 h-4 w-4" />
                                 </a>
                             </div>
                         </div>

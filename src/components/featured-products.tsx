@@ -1,7 +1,7 @@
 import { ShoppingCart, Star } from "lucide-react";
 import { useState } from "react";
 import { useCart } from "../hooks/useCart";
-import { cookies } from "../data/data";
+import { cookies } from "../dummyData/data";
 import { Cookie } from "../contexts/types";
 
 const FeaturedProducts = () => {

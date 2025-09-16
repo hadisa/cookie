@@ -6,6 +6,8 @@ Author: Hadisa
 
 GitHub: https://github.com/hadisa/cookie
 
+Deployed on: https://cookie-hadisa.vercel.app/
+
 ## Table of Contents
 
 - Overview

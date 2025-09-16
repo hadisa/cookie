@@ -1,4 +1,5 @@
 import { ShoppingBag, Utensils } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -9,9 +10,9 @@ const Hero = () => {
             <h1 className="text-4xl md:text-5xl font-bold text-primary-900 dark:text-white mb-6 font-heading animate-slide-up">FRESHLY BAKED GOODNESS IN EVERY BITE</h1>
             <p className="text-lg text-primary-700 dark:text-gray-300 mb-8 animate-slide-up">Handcrafted artisanal cookies made with the finest ingredients for the ultimate indulgence.</p>
             <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6 animate-slide-up">
-              <button className="bg-secondary hover:bg-primary-800 text-white px-8 py-4 rounded-full font-semibold transition-colors shadow-lg flex items-center justify-center">
+              <Link to="/menu" className="bg-secondary hover:bg-primary-800 text-white px-8 py-4 rounded-full font-semibold transition-colors shadow-lg flex items-center justify-center">
                 <Utensils className="mr-2" /> View Menu
-              </button>
+              </Link>
               <button className="bg-white dark:bg-gray-800 text-primary-800 dark:text-white hover:bg-primary-100 dark:hover:bg-gray-700 px-8 py-4 rounded-full font-semibold transition-colors shadow-lg flex items-center justify-center">
                 <ShoppingBag className="mr-2" /> Order Now
               </button>
