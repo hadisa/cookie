@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Gourmet Cookie Shop</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#fdf8f6',
+                            100: '#f2e8e5',
+                            200: '#eaddd7',
+                            300: '#e0cec7',
+                            400: '#d2bab0',
+                            500: '#bfa094',
+                            600: '#a18072',
+                            700: '#977669',
+                            800: '#846358',
+                            900: '#43302b',
+                        },
+                        secondary: '#D2691E',
+                        accent: '#F4A460',
+                    },
+                    fontFamily: {
+                        heading: ['"Playfair Display"', 'serif'],
+                        body: ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/css">
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .story-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .story-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .hero-pattern {
+            background-color: #fdf8f6;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d2bab0' fill-opacity='0.2'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        
+        .team-member {
+            transition: transform 0.3s ease;
+        }
+        
+        .team-member:hover {
+            transform: translateY(-8px);
+        }
+        
+        .process-step {
+            position: relative;
+        }
+        
+        .process-step:not(:last-child):after {
+            content: '';
+            position: absolute;
+            top: 40%;
+            right: -10%;
+            width: 20%;
+            height: 2px;
+            background: linear-gradient(90deg, #D2691E, transparent);
+        }
+        
+        @media (max-width: 768px) {
+            .process-step:not(:last-child):after {
+                display: none;
+            }
+        }
+        
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .value-icon {
+            transition: all 0.3s ease;
+        }
+        
+        .value-card:hover .value-icon {
+            transform: scale(1.1) rotate(5deg);
+            color: #D2691E;
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Header/Navigation -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <div class="w-10 h-10 rounded-full bg-primary-700 flex items-center justify-center text-white mr-3">
+                    <i class="fas fa-cookie-bite"></i>
+                </div>
+                <a href="index.html" class="text-2xl font-bold text-primary-800 font-heading">Cookie Delights</a>
+            </div>
+            
+            <nav class="hidden md:flex space-x-8">
+                <a href="index.html" class="text-primary-600 hover:text-secondary transition-colors font-medium">HOME</a>
+                <a href="categories.html" class="text-primary-600 hover:text-secondary transition-colors font-medium">CATEGORIES</a>
+                <a href="about.html" class="text-secondary font-medium">ABOUT US</a>
+                <a href="contact.html" class="text-primary-600 hover:text-secondary transition-colors font-medium">CONTACT US</a>
+            </nav>
+            
+            <div class="flex items-center space-x-4">
+                <button class="p-2 rounded-full hover:bg-primary-100 transition-colors">
+                    <i class="fas fa-search text-primary-800"></i>
+                </button>
+                
+                <button class="relative p-2 rounded-full hover:bg-primary-100 transition-colors">
+                    <i class="fas fa-shopping-cart text-primary-800"></i>
+                    <span class="absolute -top-1 -right-1 bg-secondary text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">3</span>
+                </button>
+                
+                <button class="md:hidden text-xl text-primary-800" id="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="hidden md:hidden bg-white py-4 px-4 border-t border-gray-200" id="mobile-menu">
+            <div class="flex flex-col space-y-3">
+                <a href="index.html" class="text-primary-600 hover:text-secondary transition-colors font-medium">HOME</a>
+                <a href="categories.html" class="text-primary-600 hover:text-secondary transition-colors font-medium">CATEGORIES</a>
+                <a href="about.html" class="text-secondary font-medium">ABOUT US</a>
+                <a href="contact.html" class="text-primary-600 hover:text-secondary transition-colors font-medium">CONTACT US</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="bg-primary-50 py-4">
+        <div class="container mx-auto px-4">
+            <nav class="flex" aria-label="Breadcrumb">
+                <ol class="flex items-center space-x-2">
+                    <li><a href="index.html" class="text-primary-600 hover:text-secondary">Home</a></li>
+                    <li class="flex items-center">
+                        <span class="text-primary-400 mx-2">/</span>
+                        <span class="text-primary-800">About Us</span>
+                    </li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-pattern py-16">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold text-primary-900 mb-6 font-heading">Our Story of Passion & Pastry</h1>
+                    <p class="text-lg text-primary-700 mb-8">Since 2010, we've been crafting exceptional cookies that bring joy to every bite. What started as a small family bakery has grown into a beloved community institution, but our commitment to quality and craftsmanship remains unchanged.</p>
+                    <div class="flex space-x-4">
+                        <div class="bg-white rounded-lg p-4 text-center shadow-md">
+                            <span class="block text-3xl font-bold text-secondary">13+</span>
+                            <span class="text-primary-600">Years of Experience</span>
+                        </div>
+                        <div class="bg-white rounded-lg p-4 text-center shadow-md">
+                            <span class="block text-3xl font-bold text-secondary">50+</span>
+                            <span class="text-primary-600">Cookie Varieties</span>
+                        </div>
+                        <div class="bg-white rounded-lg p-4 text-center shadow-md">
+                            <span class="block text-3xl font-bold text-secondary">10k+</span>
+                            <span class="text-primary-600">Happy Customers</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1599785209793-81ef42c37e40?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="Baker preparing cookies" class="rounded-2xl shadow-xl w-full max-w-md">
+                        <div class="absolute -bottom-4 -right-4 bg-secondary text-white p-4 rounded-lg shadow-lg">
+                            <p class="text-sm">Family owned & operated since</p>
+                            <p class="text-2xl font-bold">2010</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Story Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-primary-900 mb-4 font-heading">How It All Began</h2>
+                <p class="text-primary-700 max-w-2xl mx-auto">Our journey started with a simple family recipe and a dream to share our love for baking with the world.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="story-card bg-primary-50 rounded-2xl p-6">
+                    <div class="bg-primary-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <span class="text-primary-700 text-2xl font-bold">1</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-primary-900 mb-4 font-heading">The Family Recipe</h3>
+                    <p class="text-primary-600">It all began with Grandma Eleanor's secret chocolate chip cookie recipe, passed down through generations and perfected over time.</p>
+                </div>
+                
+                <div class="story-card bg-primary-50 rounded-2xl p-6">
+                    <div class="bg-primary-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <span class="text-primary-700 text-2xl font-bold">2</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-primary-900 mb-4 font-heading">First Bakery</h3>
+                    <p class="text-primary-600">In 2010, we opened our first small bakery with just one oven and a dream. The community response was overwhelming from day one.</p>
+                </div>
+                
+                <div class="story-card bg-primary-50 rounded-2xl p-6">
+                    <div class="bg-primary-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <span class="text-primary-700 text-2xl font-bold">3</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-primary-900 mb-4 font-heading">Today & Beyond</h3>
+                    <p class="text-primary-600">Today, we've grown to become a beloved local institution, but we still bake every cookie with the same love and care as we did on day one.</p>
+                </div>
+            </div>
+            
+            <div class="mt-16 bg-secondary rounded-2xl p-8 md:p-12 text-white">
+                <div class="max-w-4xl mx-auto text-center">
+                    <h2 class="text-3xl font-bold mb-6 font-heading">Our Philosophy</h2>
+                    <p class="text-xl mb-6">"We believe that a great cookie can brighten anyone's day. That's why we never compromise on quality, always use the finest ingredients, and bake each batch with genuine care and attention."</p>
+                    <div class="flex items-center justify-center">
+                        <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" 
+                             alt="Founder" class="w-16 h-16 rounded-full border-4 border-white mr-4">
+                        <div class="text-left">
+                            <p class="font-semibold">Eleanor Baker</p>
+                            <p class="text-secondary-200">Founder & Head Baker</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Values Section -->
+    <section class="py-16 bg-primary-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-primary-900 mb-4 font-heading">Our Core Values</h2>
+                <p class="text-primary-700 max-w-2xl mx-auto">These principles guide everything we do, from selecting ingredients to serving our customers.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="value-card bg-white rounded-2xl p-6 text-center">
+                    <div class="value-icon bg-primary-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl text-primary-700">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-primary-900 mb-4 font-heading">Quality</h3>
+                    <p class="text-primary-600">We never compromise on ingredients or craftsmanship. Every cookie must meet our high standards.</p>
+                </div>
+                
+                <div class="value-card bg-white rounded-2xl p-6 text-center">
+                    <div class="value-icon bg-primary-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl text-primary-700">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-primary-900 mb-4 font-heading">Passion</h3>
+                    <p class="text-primary-600">We genuinely love what we do, and we believe that passion is the secret ingredient in every cookie.</p>
+                </div>
+                
+                <div class="value-card bg-white rounded-2xl p-6 text-center">
+                    <div class="value-icon bg-primary-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl text-primary-700">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-primary-900 mb-4 font-heading">Sustainability</h3>
+                    <p class="text-primary-600">We source locally when possible and use eco-friendly packaging to minimize our environmental impact.</p>
+                </div>
+                
+                <div class="value-card bg-white rounded-2xl p-6 text-center">
+                    <div class="value-icon bg-primary-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl text-primary-700">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-primary-900 mb-4 font-heading">Community</h3>
+                    <p class="text-primary-600">We're proud to be part of the local community and support various initiatives and events.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Process Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-primary-900 mb-4 font-heading">Our Baking Process</h2>
+                <p class="text-primary-700 max-w-2xl mx-auto">Every cookie goes through a careful process to ensure perfection in every bite.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="process-step text-center">
+                    <div class="bg-primary-100 w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-clipboard-list text-primary-700 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-primary-900 mb-4 font-heading">1. Select</h3>
+                    <p class="text-primary-600">We carefully source the finest ingredients from trusted suppliers.</p>
+                </div>
+                
+                <div class="process-step text-center">
+                    <div class="bg-primary-100 w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-blender text-primary-700 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-primary-900 mb-4 font-heading">2. Prepare</h3>
+                    <p class="text-primary-600">Our bakers mix ingredients with precision, following time-tested recipes.</p>
+                </div>
+                
+                <div class="process-step text-center">
+                    <div class="bg-primary-100 w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-fire text-primary-700 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-primary-900 mb-4 font-heading">3. Bake</h3>
+                    <p class="text-primary-600">Each batch is baked at the perfect temperature for ideal texture and flavor.</p>
+                </div>
+                
+                <div class="process-step text-center">
+                    <div class="bg-primary-100 w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-check-circle text-primary-700 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-primary-900 mb-4 font-heading">4. Quality Check</h3>
+                    <p class="text-primary-600">Every cookie is inspected before packaging to ensure it meets our standards.</p>
+                </div>
+            </div>
+            
+            <div class="mt-16 bg-primary-900 rounded-2xl p-8 text-white text-center">
+                <h3 class="text-2xl font-bold mb-4 font-heading">Freshly Baked Daily</h3>
+                <p class="mb-6">We bake in small batches throughout the day to ensure you always get cookies at their peak freshness.</p>
+                <a href="categories.html" class="inline-block bg-secondary hover:bg-primary-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors">
+                    Explore Our Cookies
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="py-16 bg-primary-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-primary-900 mb-4 font-heading">Meet Our Team</h2>
+                <p class="text-primary-700 max-w-2xl mx-auto">The talented bakers and staff who make Cookie Delights special.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="team-member bg-white rounded-2xl overflow-hidden shadow-md text-center">
+                    <img src="https://images.unsplash.com/photo-1583394293214-28ded15ee548?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                         alt="Head Baker" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-primary-900 mb-2 font-heading">Eleanor Baker</h3>
+                        <p class="text-secondary mb-4">Founder & Head Baker</p>
+                        <p class="text-primary-600 text-sm">With over 30 years of baking experience, Eleanor ensures every cookie meets her exacting standards.</p>
+                    </div>
+                </div>
+                
+                <div class="team-member bg-white rounded-2xl overflow-hidden shadow-md text-center">
+                    <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                         alt="Pastry Chef" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-primary-900 mb-2 font-heading">Michael Roberts</h3>
+                        <p class="text-secondary mb-4">Pastry Chef</p>
+                        <p class="text-primary-600 text-sm">Michael brings innovation to our recipes while respecting traditional baking techniques.</p>
+                    </div>
+                </div>
+                
+                <div class="team-member bg-white rounded-2xl overflow-hidden shadow-md text-center">
+                    <img src="https://images.unsplash.com/photo-1566554273541-37a9ca77b91f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                         alt="Head of Operations" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-primary-900 mb-2 font-heading">Sarah Johnson</h3>
+                        <p class="text-secondary mb-4">Head of Operations</p>
+                        <p class="text-primary-600 text-sm">Sarah keeps our bakery running smoothly and ensures every customer has a wonderful experience.</p>
+                    </div>
+                </div>
+                
+                <div class="team-member bg-white rounded-2xl overflow-hidden shadow-md text-center">
+                    <img src="https://images.unsplash.com/photo-1614436201459-156d322d38e4?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                         alt="Marketing Manager" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-primary-900 mb-2 font-heading">Jessica Lee</h3>
+                        <p class="text-secondary mb-4">Marketing Manager</p>
+                        <p class="text-primary-600 text-sm">Jessica spreads the word about our cookies and manages our community outreach programs.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="contact.html" class="inline-flex items-center text-secondary hover:text-primary-800 font-medium">
+                    Join Our Team
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-16 bg-primary-900">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold text-white mb-6 font-heading">Stay Connected</h2>
+            <p class="text-primary-200 mb-8 max-w-2xl mx-auto">Subscribe to our newsletter for behind-the-scenes stories, new flavor announcements, and exclusive offers.</p>
+            <form class="flex flex-col sm:flex-row gap-4 max-w-2xl mx-auto">
+                <input type="email" placeholder="Your email address" class="flex-grow px-6 py-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary">
+                <button type="submit" class="bg-secondary hover:bg-primary-700 text-white px-8 py-4 rounded-lg font-semibold transition-colors">
+                    Subscribe
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 font-heading">NAVIGATION</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-primary-200 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="categories.html" class="text-primary-200 hover:text-white transition-colors">Categories</a></li>
+                        <li><a href="about.html" class="text-primary-200 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="contact.html" class="text-primary-200 hover:text-white transition-colors">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 font-heading">CONTACT INFO</h4>
+                    <address class="not-italic text-primary-200">
+                        <p class="mb-2">123 Cookie Lane</p>
+                        <p class="mb-2">Bakery Town, BT 12345</p>
+                        <p class="mb-2">Phone: (123) 456-7890</p>
+                        <p class="mb-2">Email: info@cookiedelights.com</p>
+                    </address>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 font-heading">HOURS</h4>
+                    <p class="text-primary-200">Monday-Friday: 8am - 6pm</p>
+                    <p class="text-primary-200">Saturday: 9am - 5pm</p>
+                    <p class="text-primary-200">Sunday: 10am - 4pm</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 font-heading">FOLLOW US</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-primary-700 rounded-full flex items-center justify-center text-white hover:bg-secondary transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-primary-700 rounded-full flex items-center justify-center text-white hover:bg-secondary transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-primary-700 rounded-full flex items-center justify-center text-white hover:bg-secondary transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-primary-700 rounded-full flex items-center justify-center text-white hover:bg-secondary transition-colors">
+                            <i class="fab fa-pinterest"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-primary-700 text-center text-primary-300">
+                <p>© 2023 Cookie Delights. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle functionality
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            mobileMenuToggle.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                
+                if (mobileMenuToggle.querySelector('i').classList.contains('fa-bars')) {
+                    mobileMenuToggle.innerHTML = '<i class="fas fa-times"></i>';
+                } else {
+                    mobileMenuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
