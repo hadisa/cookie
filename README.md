@@ -3,6 +3,7 @@
 A modern, responsive cookie shop website built with React, TypeScript, Vite, React Router, and Tailwind CSS. It showcases product categories, featured items, a contact form with validation, FAQ, and more — optimized for performance and developer experience.
 
 Author: Hadisa
+
 GitHub: https://github.com/hadisa/cookie
 
 ## Table of Contents
