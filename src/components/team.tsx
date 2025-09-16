@@ -1,11 +1,11 @@
 
 const Team = () => {
     return (
-        <section className="py-16 bg-primary-50">
+        <section className="py-16 bg-primary-50 dark:bg-gray-900">
             <div className="container mx-auto px-4">
                 <div className="text-center mb-16">
-                    <h2 className="text-3xl font-bold text-primary-900 mb-4 font-heading">Meet Our Team</h2>
-                    <p className="text-primary-700 max-w-2xl mx-auto">The talented bakers and staff who make Cookie Delights special.</p>
+                    <h2 className="text-3xl font-bold text-primary-900 mb-4 font-heading dark:text-white">Meet Our Team</h2>
+                    <p className="text-primary-700 max-w-2xl mx-auto dark:text-gray-300">The talented bakers and staff who make Cookie Delights special.</p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">

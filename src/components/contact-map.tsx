@@ -2,11 +2,11 @@ import { Car, Clock, Cookie } from "lucide-react";
 
 const ContactMap = () => {
     return (
-        <section id="map" className="py-16 bg-primary-50">
+        <section id="map" className="py-16 bg-primary-50 dark:bg-gray-800">
             <div className="container mx-auto px-4">
                 <div className="text-center mb-12">
-                    <h2 className="text-3xl font-bold text-primary-900 mb-4 font-heading">Find Our Bakery</h2>
-                    <p className="text-primary-700 max-w-2xl mx-auto">Visit our store to experience the aroma of freshly baked cookies and taste our delicious creations.</p>
+                    <h2 className="text-3xl font-bold text-primary-900 mb-4 font-heading dark:text-white">Find Our Bakery</h2>
+                    <p className="text-primary-700 max-w-2xl mx-auto dark:text-gray-300">Visit our store to experience the aroma of freshly baked cookies and taste our delicious creations.</p>
                 </div>
 
                 <div className="map-container">
@@ -22,32 +22,32 @@ const ContactMap = () => {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-                    <div className="bg-white rounded-xl shadow-md p-6 text-center">
+                    <div className="bg-white rounded-xl shadow-md p-6 text-center dark:bg-gray-900">
                         <div className="bg-primary-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                             <Clock className="text-primary-700 text-2xl" />
                         </div>
-                        <h3 className="text-xl font-semibold text-primary-900 mb-3 font-heading">Store Hours</h3>
+                        <h3 className="text-xl font-semibold text-primary-900 mb-3 font-heading dark:text-white">Store Hours</h3>
                         <ul className="text-primary-600 space-y-1">
-                            <li>Monday-Friday: 8am - 6pm</li>
-                            <li>Saturday: 9am - 5pm</li>
-                            <li>Sunday: 10am - 4pm</li>
+                            <li className="dark:text-gray-300">Monday-Friday: 8am - 6pm</li>
+                            <li className="dark:text-gray-300">Saturday: 9am - 5pm</li>
+                            <li className="dark:text-gray-300">Sunday: 10am - 4pm</li>
                         </ul>
                     </div>
 
-                    <div className="bg-white rounded-xl shadow-md p-6 text-center">
+                    <div className="bg-white rounded-xl shadow-md p-6 text-center dark:bg-gray-900">
                         <div className="bg-primary-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                             <Car className="text-primary-700 text-2xl" />
                         </div>
-                        <h3 className="text-xl font-semibold text-primary-900 mb-3 font-heading">Parking</h3>
-                        <p className="text-primary-600">Free parking available in our dedicated lot behind the bakery. Additional street parking available.</p>
+                        <h3 className="text-xl font-semibold text-primary-900 mb-3 font-heading dark:text-white">Parking</h3>
+                        <p className="text-primary-600 dark:text-gray-300">Free parking available in our dedicated lot behind the bakery. Additional street parking available.</p>
                     </div>
 
-                    <div className="bg-white rounded-xl shadow-md p-6 text-center">
+                    <div className="bg-white rounded-xl shadow-md p-6 text-center dark:bg-gray-900">
                         <div className="bg-primary-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                             <Cookie className="text-primary-700 text-2xl" />
                         </div>
-                        <h3 className="text-xl font-semibold text-primary-900 mb-3 font-heading">Fresh Daily</h3>
-                        <p className="text-primary-600">Our cookies are baked fresh throughout the day. Call ahead for large orders or special requests.</p>
+                        <h3 className="text-xl font-semibold text-primary-900 mb-3 font-heading dark:text-white">Fresh Daily</h3>
+                        <p className="text-primary-600 dark:text-gray-300">Our cookies are baked fresh throughout the day. Call ahead for large orders or special requests.</p>
                     </div>
                 </div>
             </div>

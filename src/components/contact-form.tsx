@@ -86,7 +86,7 @@ const ContactForm = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Information */}
           <div>
-            <h2 className="text-3xl font-bold text-primary-900 mb-8 font-heading">
+            <h2 className="text-3xl font-bold text-primary-900 mb-8 font-heading dark:text-white">
               Contact Information
             </h2>
 
@@ -97,16 +97,16 @@ const ContactForm = () => {
                   <Map className="text-primary-700 text-xl" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-primary-900 mb-2 font-heading">
+                  <h3 className="text-xl font-semibold text-primary-900 mb-2 font-heading dark:text-white">
                     Visit Our Bakery
                   </h3>
-                  <p className="text-primary-600">
+                  <p className="text-primary-600 dark:text-gray-300">
                     123 Cookie Lane<br />
                     Bakery Town, BT 12345
                   </p>
                   <a 
                     href="#map" 
-                    className="mt-3 text-secondary hover:text-primary-800 font-medium flex items-center"
+                    className="mt-3 text-secondary hover:text-primary-800 font-medium flex items-center dark:text-gray-300"
                   >
                     Get Directions
                     <ArrowRight className="ml-2 h-4 w-4" />
@@ -120,11 +120,11 @@ const ContactForm = () => {
                   <Phone className="text-primary-700 text-xl" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-primary-900 mb-2 font-heading">
+                  <h3 className="text-xl font-semibold text-primary-900 mb-2 font-heading dark:text-white">
                     Call Us
                   </h3>
-                  <p className="text-primary-600">(123) 456-7890</p>
-                  <p className="text-sm text-primary-500 mt-1">
+                  <p className="text-primary-600 dark:text-gray-300">(123) 456-7890</p>
+                  <p className="text-sm text-primary-500 mt-1 dark:text-gray-300">
                     Monday-Friday: 8am - 6pm
                   </p>
                 </div>
@@ -136,11 +136,11 @@ const ContactForm = () => {
                   <Contact className="text-primary-700 text-xl" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-primary-900 mb-2 font-heading">
+                  <h3 className="text-xl font-semibold text-primary-900 mb-2 font-heading dark:text-white">
                     Email Us
                   </h3>
-                  <p className="text-primary-600">info@cookiedelights.com</p>
-                  <p className="text-sm text-primary-500 mt-1">
+                  <p className="text-primary-600 dark:text-gray-300">info@cookiedelights.com</p>
+                  <p className="text-sm text-primary-500 mt-1 dark:text-gray-300">
                     We typically respond within 24 hours
                   </p>
                 </div>
@@ -152,7 +152,7 @@ const ContactForm = () => {
                   <Hash className="text-primary-700 text-xl" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-primary-900 mb-2 font-heading">
+                  <h3 className="text-xl font-semibold text-primary-900 mb-2 font-heading dark:text-white">
                     Follow Us
                   </h3>
                   <div className="flex space-x-4 mt-3">
@@ -184,18 +184,18 @@ const ContactForm = () => {
           </div>
 
           {/* Contact Form */}
-          <div className="contact-card bg-white rounded-xl shadow-md p-8">
-            <h2 className="text-3xl font-bold text-primary-900 mb-6 font-heading">
+          <div className="contact-card bg-white dark:bg-gray-800 rounded-xl shadow-md p-8">
+            <h2 className="text-3xl font-bold text-primary-900 mb-6 font-heading dark:text-white">
               Send Us a Message
             </h2>
-            <p className="text-primary-600 mb-8">
+            <p className="text-primary-600 mb-8 dark:text-gray-300">
               Fill out the form below and we'll get back to you as soon as possible.
             </p>
 
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-6" noValidate>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="firstName" className="block text-primary-700 mb-2">
+                  <label htmlFor="firstName" className="block text-primary-700 mb-2 dark:text-white">
                     First Name *
                   </label>
                   <input
@@ -215,7 +215,7 @@ const ContactForm = () => {
                 </div>
                 
                 <div>
-                  <label htmlFor="lastName" className="block text-primary-700 mb-2">
+                  <label htmlFor="lastName" className="block text-primary-700 mb-2 dark:text-white">
                     Last Name *
                   </label>
                   <input

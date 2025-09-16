@@ -2,11 +2,11 @@ import { ArrowRight } from "lucide-react";
 
 const SpecialOffers = () => {
     return (
-        <section className="py-16 bg-primary-50">
+        <section className="py-16 bg-primary-50 dark:bg-gray-900">
             <div className="container mx-auto px-4">
                 <div className="text-center mb-12">
-                    <h2 className="text-3xl font-bold text-primary-900 mb-4 font-heading">Special Offers</h2>
-                    <p className="text-primary-700 max-w-2xl mx-auto">Take advantage of our current promotions and limited-time offers on select cookie categories.</p>
+                    <h2 className="text-3xl font-bold text-primary-900 mb-4 font-heading dark:text-white">Special Offers</h2>
+                    <p className="text-primary-700 max-w-2xl mx-auto dark:text-gray-300">Take advantage of our current promotions and limited-time offers on select cookie categories.</p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
