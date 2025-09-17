@@ -240,4 +240,4 @@ Contributions are welcome! Feel free to open an issue or submit a pull request. 
 
 ## License
 
-This project is open-source. If you need a specific license (e.g., MIT), add a `LICENSE` file to the repository.
+This project is open-source.
